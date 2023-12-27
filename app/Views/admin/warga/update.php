@@ -128,14 +128,6 @@ $flasherror = session()->getFlashdata('error');
                                 <input type="text" class="form-control" name="nama" id="nama" aria-describedby="nama" value="<?php echo $warga['nama'] ?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="nik" class="form-label">NIK</label>
-                                <input type="number" class="form-control" name="nik" id="nik" value="<?php echo $warga['nik'] ?>" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="no_hp" class="form-label">No Handphone</label>
-                                <input type="number" class="form-control" name="no_hp" id="no_hp" value="<?php echo $warga['no_telepon'] ?>" required>
-                            </div>
-                            <div class="mb-3">
                                 <label for="alamat" class="form-label">Alamat</label>
                                 <textarea class="form-control" id="alamat" name="alamat" rows="3" required><?php echo $warga['alamat'] ?></textarea>
                             </div>

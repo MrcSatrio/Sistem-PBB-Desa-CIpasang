@@ -128,25 +128,8 @@ $flasherror = session()->getFlashdata('error');
                                 <input type="text" class="form-control" name="nama" id="nama" aria-describedby="nama" value="<?php echo $bangunan['nama'] ?>" required disabled>
                             </div>
                             <div class="mb-3">
-                                <label for="nik" class="form-label">NIK</label>
-                                <input type="number" class="form-control" name="nik" id="nik" value="<?php echo $bangunan['nik'] ?>" required disabled>
-                            </div>
-                            <div class="mb-3">
                                 <label for="njop" class="form-label">NJOP</label>
                                 <input type="text" class="form-control" name="njop" id="njop" value="<?php echo $bangunan['njop'] ?>" required>
-                            </div>
-                            <div class="mb-3">
-                            <label for="luas_bangunan" class="form-label">Luas Bangunan</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="luas_bangunan" aria-describedby="basic-addon1" name="luas_bangunan"  value="<?php echo $bangunan['luas_bangunan'] ?>" placeholder="Isi Sesuai Luas Yang tertera" required>
-                                <span class="input-group-text" id="basic-addon1">m<sup>2</sup></span>
-                            </div>
-                            </div>
-                            <div class="mb-3">
-                            <label for="luas_tanah" class="form-label">Luas Tanah</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="luas_tanah" aria-describedby="basic-addon2" name="luas_tanah"  value="<?php echo $bangunan['luas_tanah'] ?>" placeholder="Isi Sesuai Luas Yang tertera" required>
-                                <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
                             </div>
                             <div class="mb-3">
                                 <label for="dusun" class="form-label">Dusun</label>
