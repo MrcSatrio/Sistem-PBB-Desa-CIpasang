@@ -204,15 +204,12 @@ public function update_warga($id)
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nama = $_POST['nama'];
-        $nik = $_POST['nik'];
         $njop = $_POST['njop'];
         $alamat = $_POST['alamat'];
-        $luas_tanah = $_POST['luas_tanah'];
-        $luas_bangunan = $_POST['luas_bangunan'];
         $id_dusun = $_POST['id_dusun'];
         
-        $existingData = $this->wargaModel->where('nik', $nik)->where('nama', $nama)->first();
-        $id_warga = $this->wargaModel->select('id_warga')->where('nik', $nik)->where('nama', $nama)->first();
+        $existingData = $this->wargaModel->where('nama', $nama)->first();
+        $id_warga = $this->wargaModel->select('id_warga')->where('nama', $nama)->where('nama', $nama)->first();
 
         if ($existingData) {
             $this->bangunanModel->insert([
@@ -220,8 +217,6 @@ public function update_warga($id)
                 'alamat' => $alamat,
                 'njop' => $njop,
                 'id_dusun' => $id_dusun,
-                'luas_tanah' => $luas_tanah,
-                'luas_bangunan' => $luas_bangunan,
             ]);
 
             session()->setFlashdata('success', 'Tambah Bangunan Berhasil');
