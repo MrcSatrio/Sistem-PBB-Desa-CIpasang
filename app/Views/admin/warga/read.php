@@ -126,8 +126,6 @@ $flasherror = session()->getFlashdata('error');
                                     <thead>
                                         <tr>
                                             <th>Nama</th>
-                                            <th>NIK</th>
-                                            <th>No HP</th>
                                             <th>Alamat</th>
                                             <th>Edit</th>
                                         </tr>
