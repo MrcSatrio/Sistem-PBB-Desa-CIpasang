@@ -82,8 +82,6 @@
                                     <thead>
                                         <tr>
                                             <th>Nama</th>
-                                            <th>NIK</th>
-                                            <th>No HP</th>
                                             <th>Alamat</th>
                                             
                                         </tr>
@@ -93,8 +91,6 @@
                                         foreach ($warga as $wr) : ?>
                                         <tr>
                                             <td><?= $wr['nama']; ?></td>
-                                            <td><?= $wr['nik']; ?></td>
-                                            <td><?= $wr['no_telepon']; ?></td>
                                             <td><?= $wr['alamat']; ?></td>
                                         </tr>
                                         <?php endforeach; ?>

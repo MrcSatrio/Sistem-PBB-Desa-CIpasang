@@ -82,10 +82,7 @@
                                     <thead>
                                         <tr>
                                             <th>Nama</th>
-                                            <th>NIK</th>
                                             <th>NJOP</th>
-                                            <th>LUAS TANAH</th>
-                                            <th>LUAS BANGUNAN</th>
                                             <th>DUSUN</th>
                                             <th>Alamat</th>
                                             
@@ -96,10 +93,7 @@
                                         foreach ($bangunan as $br) : ?>
                                         <tr>
                                             <td><?= $br['nama']; ?></td>
-                                            <td><?= $br['nik']; ?></td>
                                             <td><?= $br['njop']; ?></td>
-                                            <td><?= $br['luas_tanah']; ?> m<sup>2</sup></td>
-                                            <td><?= $br['luas_bangunan']; ?> m<sup>2</sup></td>
                                             <td><?= $br['nama_dusun']; ?></td>
                                             <td><?= $br['alamat']; ?></td>
                                         </tr>

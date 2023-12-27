@@ -10,7 +10,7 @@ class BangunanModel extends Model
     protected $primaryKey = 'id_bangunan';
     protected $useTimestamps = true; // Aktifkan timestamp
 
-    protected $allowedFields = ['id_warga','id_dusun','luas_tanah','luas_bangunan', 'alamat', 'njop', 'kadus', 'tahun', 'jumlah_pembayaran', 'status', 'created_at', 'updated_at'];
+    protected $allowedFields = ['id_warga','id_dusun', 'alamat', 'njop','tahun', 'jumlah_pembayaran', 'status', 'created_at', 'updated_at'];
 
     // Metode atau fungsi lainnya sesuai kebutuhan Anda
 
