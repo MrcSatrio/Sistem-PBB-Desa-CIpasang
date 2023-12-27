@@ -244,10 +244,10 @@ public function delete_bangunan($id)
         $this->bangunanModel->delete($id);
 
         session()->setFlashdata('success', 'Hapus Bangunan Berhasil');
-        return redirect()->to('/admin/read_warga');
+        return redirect()->to('/admin/read_bangunan');
     } else {
         session()->setFlashdata('error', 'Data Bangunan Tidak Ada');
-        return redirect()->to('/admin/read_warga');
+        return redirect()->to('/admin/read_bangunan');
     }
 }
 
