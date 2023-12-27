@@ -10,5 +10,5 @@ class WargaModel extends Model
     protected $primaryKey = 'id_warga';
     protected $useTimestamps = true;
 
-    protected $allowedFields = ['nama', 'nik', 'alamat', 'no_telepon', 'created_at', 'updated_at'];
+    protected $allowedFields = ['nama', 'alamat', 'created_at', 'updated_at'];
 }
