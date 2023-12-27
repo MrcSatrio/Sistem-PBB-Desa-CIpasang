@@ -189,7 +189,7 @@ public function update_warga($id)
     public function read_bangunan()
     {
         $bangunan =  $this->bangunanModel
-        ->select('bangunan.*, warga.id_warga, warga.nama, warga.nik, warga.no_telepon, dusun.nama_dusun')
+        ->select('bangunan.*, warga.id_warga, warga.nama, dusun.nama_dusun')
         ->join('warga', 'warga.id_warga = bangunan.id_warga')
         ->join('dusun', 'dusun.id_dusun = bangunan.id_dusun' )
         ->findAll();

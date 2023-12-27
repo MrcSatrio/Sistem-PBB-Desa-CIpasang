@@ -133,12 +133,7 @@ $flasherror = session()->getFlashdata('error');
                                 </datalist>
                             <label for="exampleDataList" class="form-label">NIK</label>
                                 <input class="form-control" list="datalistOptions" id="exampleDataList" name="nik" placeholder="Isi Sesuai NIK KTP" required>
-                                <datalist id="datalistOptions">
-                                <?php $i = 1;
-                                        foreach ($warga as $wr) : ?>
-                                <option value="<?= $wr['nik']; ?>">
-                                            <?php endforeach ?>
-                                </datalist>
+
                             <div class="mb-3">
                                 <label for="njop" class="form-label">NOP</label>
                                 <input type="text" class="form-control" name="njop" id="njop" placeholder="Isi Sesuai Nomer Objek Pajak" required>
