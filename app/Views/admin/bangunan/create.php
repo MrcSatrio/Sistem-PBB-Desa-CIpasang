@@ -131,28 +131,10 @@ $flasherror = session()->getFlashdata('error');
                                 <option value="<?= $wr['nama']; ?>">
                                             <?php endforeach ?>
                                 </datalist>
-                            <label for="exampleDataList" class="form-label">NIK</label>
-                                <input class="form-control" list="datalistOptions" id="exampleDataList" name="nik" placeholder="Isi Sesuai NIK KTP" required>
-
+                                
                             <div class="mb-3">
                                 <label for="njop" class="form-label">NOP</label>
                                 <input type="text" class="form-control" name="njop" id="njop" placeholder="Isi Sesuai Nomer Objek Pajak" required>
-                            </div>
-
-                            <div class="mb-3">
-                            <label for="luas_bangunan" class="form-label">Luas Bangunan</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="luas_bangunan" aria-describedby="basic-addon1" name="luas_bangunan" placeholder="Isi Sesuai Luas Yang tertera" required>
-                                <span class="input-group-text" id="basic-addon1">m<sup>2</sup></span>
-                            </div>
-                            </div>
-
-                            <div class="mb-3">
-                            <label for="luas_tanah" class="form-label">Luas Tanah</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="luas_tanah" aria-describedby="basic-addon2" name="luas_tanah" placeholder="Isi Sesuai Luas Yang tertera" required>
-                                <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
-                            </div>
                             </div>
 
 
