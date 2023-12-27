@@ -128,18 +128,9 @@ $flasherror = session()->getFlashdata('error');
                                 <input type="text" class="form-control" name="nama" id="nama" aria-describedby="nama" placeholder="Isi Sesuai Nama KTP" required>
                             </div>
                             <div class="mb-3">
-                                <label for="nik" class="form-label">NIK</label>
-                                <input type="number" class="form-control" name="nik" id="nik" placeholder="Isi Sesuai NIK KTP" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="no_hp" class="form-label">No Handphone</label>
-                                <input type="number" class="form-control" name="no_hp" id="no_hp" required>
-                            </div>
-                            <div class="mb-3">
                                 <label for="alamat" class="form-label">Alamat</label>
                                 <textarea class="form-control" id="alamat" name="alamat" rows="3" placeholder="Isi Sesuai Alamat KTP" required></textarea>
                             </div>
-
                             <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                             </div>

@@ -85,25 +85,20 @@ protected $dusunModel;
     public function create_warga()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
         $nama = $_POST['nama'];
-        $nik = $_POST['nik'];
-        $no_hp = $_POST['no_hp'];
         $alamat = $_POST['alamat'];
-        $existingData = $this->wargaModel->where('nik', $nik)->findAll();
+        $existingData = $this->wargaModel->where('nama', $nama)->findAll();
 
         if (empty($existingData)) {
             $this->wargaModel->insert([
                 'nama' => $nama,
-                'nik' => $nik,
-                'no_hp' => $no_hp,
                 'alamat' => $alamat,
             ]);
 
             session()->setFlashdata('success', 'Tambah Warga Berhasil');
             return redirect()->to('/admin/read_warga');
         } else {
-            $error_message = "Data with NIK $nik already exists!";
+            $error_message = "Data with NIK $nama already exists!";
             session()->setFlashdata('error', $error_message);
             return redirect()->to('/admin/create_warga');
         }
@@ -146,7 +141,7 @@ public function update_warga($id)
             ];
             return view('admin/warga/update', $data);
         } else {
-            $error_message = "Data with NIK $id not found!";
+            $error_message = "Data with ID $id not found!";
             session()->setFlashdata('error', $error_message);
             return redirect()->to('/admin/read_warga');
         }
@@ -157,18 +152,16 @@ public function update_warga($id)
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
             $nama = $_POST['nama'];
-            $nik = $_POST['nik'];
-            $no_telepon = $_POST['no_hp'];
             $alamat = $_POST['alamat'];
             $id_warga = $_POST['id_warga'];
     
             $existingWargaWithSameNik = $this->wargaModel
-                ->where('nik', $nik)
+                ->where('nama', $nama)
                 ->where('id_warga !=', $id_warga) 
                 ->first();
     
             if ($existingWargaWithSameNik) {
-                $error_message = "Data with NIK $nik already exists!";
+                $error_message = "Data with NAMA $nama already exists!";
                 session()->setFlashdata('error', $error_message);
                 return redirect()->to('/admin/read_warga');
             }
@@ -178,8 +171,6 @@ public function update_warga($id)
             if ($existingWarga) {
                 $this->wargaModel->update($id_warga, [
                     'nama' => $nama,
-                    'nik' => $nik,
-                    'no_telepon' => $no_telepon,
                     'alamat' => $alamat,
                 ]);
     
