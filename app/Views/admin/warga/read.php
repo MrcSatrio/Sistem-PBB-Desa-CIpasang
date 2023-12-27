@@ -137,8 +137,6 @@ $flasherror = session()->getFlashdata('error');
                                         foreach ($warga as $wr) : ?>
                                         <tr>
                                             <td><?= $wr['nama']; ?></td>
-                                            <td><?= $wr['nik']; ?></td>
-                                            <td><?= $wr['no_telepon']; ?></td>
                                             <td><?= $wr['alamat']; ?></td>
                                             <td>
                                                 <a href="<?= base_url('/admin/update_warga/' . $wr['id_warga']) ?>" class="btn btn-sm btn-primary btn-circle profile">
