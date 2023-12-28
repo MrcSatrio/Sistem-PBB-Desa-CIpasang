@@ -103,7 +103,7 @@
                             <h1 class="display-4"><?= $totalbangunan[0]['total_bangunan']; ?></h1>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="btn btn-light" href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a class="btn btn-light" href="<?= base_url('/admin/read_bangunan') ?>">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                             <h1 class="display-4"><?= $totalwarga[0]['total_warga']; ?></h1>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="btn btn-light" href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a class="btn btn-light" href="<?= base_url('/admin/read_warga') ?>">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                             <h1 class="display-4"><?= "Rp {$formatted_total}" ?></h1>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="btn btn-light" href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a class="btn btn-light" href="<?= base_url('/admin/history_transaksi') ?>">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                             <h1 class="display-4"><?= "Rp {$formatted_total}" ?></h1>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="btn btn-light" href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a class="btn btn-light" href="<?= base_url('/admin/history_transaksi') ?>">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
