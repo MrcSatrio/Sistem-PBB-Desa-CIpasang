@@ -212,12 +212,12 @@ public function update_warga($id)
         $id_warga = $this->wargaModel->select('id_warga')->where('nama', $nama)->first();
 
         if ($existingData) {
-            // Check if data already exists in bangunanModel
-            $existingBangunan = $this->bangunanModel->where('id_warga', $id_warga)->first();
+            // Check if data already exists in bangunanModel based on njop
+            $existingBangunanByNjop = $this->bangunanModel->where('njop', $njop)->first();
 
-            if ($existingBangunan) {
-                // Data already exists in bangunanModel, handle error
-                session()->setFlashdata('error', 'Data bangunan sudah ada');
+            if ($existingBangunanByNjop) {
+                // Data with the same njop already exists in bangunanModel, handle error
+                session()->setFlashdata('error', 'Data bangunan dengan NJOP yang sama sudah terdaftar');
                 return redirect()->to('/admin/create_bangunan');
             } else {
                 // Data does not exist in bangunanModel, insert new data
@@ -245,6 +245,7 @@ public function update_warga($id)
         return view('admin/bangunan/create', $data);
     }
 }
+
 
 
 public function delete_bangunan($id)
