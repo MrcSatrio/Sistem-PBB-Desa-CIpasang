@@ -207,20 +207,30 @@ public function update_warga($id)
         $njop = $_POST['njop'];
         $alamat = $_POST['alamat'];
         $id_dusun = $_POST['id_dusun'];
-        
+
         $existingData = $this->wargaModel->where('nama', $nama)->first();
-        $id_warga = $this->wargaModel->select('id_warga')->where('nama', $nama)->where('nama', $nama)->first();
+        $id_warga = $this->wargaModel->select('id_warga')->where('nama', $nama)->first();
 
         if ($existingData) {
-            $this->bangunanModel->insert([
-                'id_warga' => $id_warga,
-                'alamat' => $alamat,
-                'njop' => $njop,
-                'id_dusun' => $id_dusun,
-            ]);
+            // Check if data already exists in bangunanModel
+            $existingBangunan = $this->bangunanModel->where('id_warga', $id_warga)->first();
 
-            session()->setFlashdata('success', 'Tambah Bangunan Berhasil');
-            return redirect()->to('/admin/create_bangunan');
+            if ($existingBangunan) {
+                // Data already exists in bangunanModel, handle error
+                session()->setFlashdata('error', 'Data bangunan sudah ada');
+                return redirect()->to('/admin/create_bangunan');
+            } else {
+                // Data does not exist in bangunanModel, insert new data
+                $this->bangunanModel->insert([
+                    'id_warga' => $id_warga,
+                    'alamat' => $alamat,
+                    'njop' => $njop,
+                    'id_dusun' => $id_dusun,
+                ]);
+
+                session()->setFlashdata('success', 'Tambah Bangunan Berhasil');
+                return redirect()->to('/admin/create_bangunan');
+            }
         } else {
             session()->setFlashdata('error', 'Data tidak tersedia');
             return redirect()->to('/admin/create_bangunan');
@@ -235,6 +245,7 @@ public function update_warga($id)
         return view('admin/bangunan/create', $data);
     }
 }
+
 
 public function delete_bangunan($id)
 {
