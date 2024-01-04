@@ -131,14 +131,6 @@ $flasherror = session()->getFlashdata('error');
                                 <option value="<?= $wr['nama']; ?>">
                                             <?php endforeach ?>
                                 </datalist>
-                            <label for="exampleDataList" class="form-label">NIK</label>
-                                <input class="form-control" list="datalistOptions" id="exampleDataList" name="nik" required>
-                                <datalist id="datalistOptions">
-                                <?php $i = 1;
-                                        foreach ($warga as $wr) : ?>
-                                <option value="<?= $wr['nik']; ?>">
-                                            <?php endforeach ?>
-                                </datalist>
                             <div class="mb-3">
                                 <label for="njop" class="form-label">NJOP</label>
                                 <input type="text" class="form-control" name="njop" id="njop" required>
