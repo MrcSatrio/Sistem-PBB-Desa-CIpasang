@@ -266,7 +266,7 @@ public function delete_bangunan($id)
 public function update_bangunan($id)
 {
     $bangunan = $this->bangunanModel
-        ->select('bangunan.*, warga.id_warga, warga.nama, warga.nik, warga.no_telepon') // Include only the desired columns
+        ->select('bangunan.*, warga.id_warga, warga.nama, warga.no_telepon') // Include only the desired columns
         ->join('warga', 'warga.id_warga = bangunan.id_warga')
         ->where('id_bangunan', $id)
         ->first();
@@ -323,7 +323,6 @@ public function transaksi()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nama = $_POST['nama'];
-        $nik = $_POST['nik'];
         $njop = $_POST['njop'];
         $kadus = $_POST['kadus'];
         $bayar = $_POST['bayar'];
@@ -331,7 +330,7 @@ public function transaksi()
         $status = $_POST['status'];
         
         // Mencari id_warga berdasarkan nik dan nama
-        $warga = $this->wargaModel->select('id_warga')->where('nik', $nik)->where('nama', $nama)->first();
+        $warga = $this->wargaModel->select('id_warga')->where('nama', $nama)->first();
 
         if ($warga) {
             // Mencari id_bangunan berdasarkan id_warga dan njop
@@ -349,7 +348,7 @@ public function transaksi()
 
                 // Mendapatkan data bangunan untuk ditampilkan di view
                 $bangunanList = $this->bangunanModel
-                    ->select('bangunan.*, warga.id_warga, warga.nama, warga.nik, warga.no_telepon') // Include only the desired columns
+                    ->select('bangunan.*, warga.id_warga, warga.nama, warga.no_telepon') // Include only the desired columns
                     ->join('warga', 'warga.id_warga = bangunan.id_warga')
                     ->findAll();
 
@@ -375,7 +374,7 @@ public function transaksi()
     } else {
         // Tindakan jika bukan metode POST (optional)
         $bangunanList = $this->bangunanModel
-            ->select('bangunan.*, warga.id_warga, warga.nama, warga.nik, warga.no_telepon') // Include only the desired columns
+            ->select('bangunan.*, warga.id_warga, warga.nama,  warga.no_telepon') // Include only the desired columns
             ->join('warga', 'warga.id_warga = bangunan.id_warga')
             ->findAll();
     
@@ -391,7 +390,7 @@ public function transaksi()
 public function read_transaksi()
 {
     $bangunan =  $this->bangunanModel
-    ->select('bangunan.*, warga.id_warga, warga.nama, warga.nik, warga.no_telepon') // Include only the desired columns
+    ->select('bangunan.*, warga.id_warga, warga.nama,  warga.no_telepon') // Include only the desired columns
     ->join('warga', 'warga.id_warga = bangunan.id_warga')
     ->findAll();
 
