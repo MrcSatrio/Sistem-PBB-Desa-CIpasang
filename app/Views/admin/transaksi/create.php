@@ -149,7 +149,8 @@ $flasherror = session()->getFlashdata('error');
                                 <label for="tahun" class="form-label">Tahun</label>
                                 <input type="text" class="form-control" name="tahun" id="tahun" value="<?= $currentYear ?>">
                             </div>
-
+                            
+za
                             <input type="hidden" name="status" id="status" value="lunas">
 
                             <button type="submit" class="btn btn-primary">Submit</button>

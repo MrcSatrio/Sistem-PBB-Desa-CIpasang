@@ -4,13 +4,19 @@ namespace App\Controllers\Auth;
 
 use \App\Controllers\BaseController;
 use App\Models\AkunModel;
+use App\Models\BangunanModel;
+use App\Models\TransaksiModel;
 
 class Login extends BaseController
 {
     protected $akunModel;
+    protected $bangunanModel;
+    protected $transaksiModel;
     public function __construct()
     {
         $this->akunModel = new AkunModel();
+        $this->bangunanModel = new BangunanModel();
+        $this->transaksiModel = new TransaksiModel();
     }
     
 
@@ -63,4 +69,29 @@ class Login extends BaseController
         session_write_close();
         return redirect()->to('/');
     }
+
+    public function cek()
+    {
+    try {
+        // Validate NOP input
+        $nop = $this->request->getPost('nop');
+        if (empty($nop)) {
+            throw new \Exception('NOP is required.');
+        }
+
+        // Perform NOP check using the model
+        $result = $this->bangunanModel
+        ->join('transaksi', 'transaksi.id_bangunan = bangunan.id_bangunan')
+        ->where('njop', $nop)
+        ->first();
+        
+        return $this->response->setJSON(['result' => $result]);
+    } catch (\Exception $e) {
+        // Handle exceptions, log errors, or return a meaningful error response
+        return $this->response->setStatusCode(500)->setJSON(['error' => $e->getMessage()]);
+    }
+    }
+
+
+    
 }

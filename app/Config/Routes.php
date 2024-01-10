@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Auth\Login::index');
 $routes->post('/login', 'Auth\Login::login');
 $routes->get('/logout', 'Auth\Login::logout');
+$routes->post('/cek', 'Auth\Login::cek');
 
 
 $routes->group('admin', ['filter' => 'role'], function ($routes) {

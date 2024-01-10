@@ -18,4 +18,16 @@ class BangunanModel extends Model
     {
         return $this->where('id_warga', $id_warga)->findAll();
     }
+    public function cekNOP($nop)
+    {
+        // Melakukan pencarian berdasarkan NOP
+        $result = $this->where('njop', $nop)->first();
+
+        if ($result) {
+            return $result;
+        } else {
+            // Jika data tidak ditemukan, Anda dapat mengembalikan nilai null atau pesan lainnya
+            return null;
+        }
+    }
 }
