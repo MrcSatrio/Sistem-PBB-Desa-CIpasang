@@ -214,20 +214,24 @@
     function submitNOPForm() {
     // Mengambil nilai NOP dari input
     var nopValue = document.getElementById('nopInput').value;
-
+    
     // Mengirim data NOP ke server menggunakan AJAX
     $.ajax({
         type: 'POST',
         url: '/cek', // Sesuaikan dengan controller dan method yang Anda gunakan
         data: { nop: nopValue },
         success: function (response) {
-            if (response) {
+            if (response.result && response.result !== null) {
+                var data = response.result;
+                console.log('Data ditemukan:', data);
     Swal.fire({
         icon: 'success',
         title: 'Data Ditemukan',
         text: 'Terimakasih Telah Melakukan Pembayaran PBB',
     });
 } else {
+    
+    console.log('Data error:', response);
     Swal.fire({
         icon: 'error',
         title: 'Data Tidak Ditemukan',

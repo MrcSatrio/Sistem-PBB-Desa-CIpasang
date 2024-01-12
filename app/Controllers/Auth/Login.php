@@ -78,11 +78,12 @@ class Login extends BaseController
         if (empty($nop)) {
             throw new \Exception('NOP is required.');
         }
-
+        $currentYear = date('Y');
         // Perform NOP check using the model
         $result = $this->bangunanModel
         ->join('transaksi', 'transaksi.id_bangunan = bangunan.id_bangunan')
         ->where('njop', $nop)
+        ->where('tahun', $currentYear)
         ->first();
         
         return $this->response->setJSON(['result' => $result]);
