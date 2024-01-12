@@ -11,11 +11,13 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="<?= base_url('css/styles.css'); ?>" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">SISTEM INFORMASI PBB</a>
+            <a class="navbar-brand ps-3" href="<?= base_url('user/dashboard') ?>">SISTEM INFORMASI PBB</a>
 
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
@@ -28,9 +30,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="<?= base_url('/logout') ?>">Logout</a></li>
                     </ul>
                 </li>
@@ -151,10 +150,35 @@
                                     <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> !-->
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+            <!-- Tambahkan card atau container untuk peta jika diperlukan -->
+            <div class="card mb-4">
+                <!-- Sesuaikan card-header jika diperlukan -->
+                <div class="card-header">
+                    <i class="fas fa-map me-1"></i>
+                    Peta
+                </div>
+                <!-- Sesuaikan card-body jika diperlukan -->
+                <div class="card-body">
+                <div id="map" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
                         </div>
                     </div>
                 </div>
                 </main>
+                <script>
+    var map = L.map('map').setView([-6.974858435629338, 108.07219586677749], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Tambahkan marker untuk menandai wilayah Desa Cipasang
+    L.marker([-6.974858435629338, 108.07219586677749]).addTo(map)
+        .bindPopup('Desa Cipasang');
+</script>
                 <script>
                     // Retrieve data from PHP
                     var transactionsGroupedByDusun = <?= json_encode($transactionsGroupedByDusun); ?>;

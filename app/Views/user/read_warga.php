@@ -15,7 +15,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">SISTEM INFORMASI PBB</a>
+            <a class="navbar-brand ps-3" href="<?= base_url('user/dashboard') ?>">SISTEM INFORMASI PBB</a>
 
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
@@ -28,9 +28,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="<?= base_url('/logout') ?>">Logout</a></li>
                     </ul>
                 </li>
@@ -78,7 +75,7 @@
                         <h1 class="mt-4">DATA WARGA</h1>
                         <div class="card mb-4">
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                            <table id="datatablesSimple" class="display nowrap">
                                     <thead>
                                         <tr>
                                             <th>Nama</th>
@@ -123,5 +120,24 @@
         <script src="<?= base_url('assets/demo/chart-bar-demo.js'); ?>"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="<?= base_url('js/datatables-simple-demo.js'); ?>"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script> 
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
     </body>
+    <script>
+$(document).ready(function() {
+    $('#datatablesSimple').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+</script>
 </html>
