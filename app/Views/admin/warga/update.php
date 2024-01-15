@@ -43,7 +43,9 @@ $flasherror = session()->getFlashdata('error');
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="<?= base_url('admin/dashboard') ?>">SISTEM INFORMASI PBB</a>
+            <a class="navbar-brand ps-3" href="<?= base_url('admin/dashboard') ?>">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Lambang_Kabupaten_Sumedang.png" alt="Logo Kabupaten Sumedang" style="max-height: 40px; max-width: 40px; margin-right: 10px;">PBB CIPASANG</a>
+
 
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
@@ -139,11 +141,9 @@ $flasherror = session()->getFlashdata('error');
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                            <div class="text-muted mx-auto text-center"> <!-- Menambahkan class "text-center" di sini -->
+                                &copy; 2024 Sistem Monitoring Pembayaran Pajak Bumi dan Bangunan<br>
+                                Desa Cipasang Kecamatan Cibugel Kabupaten Sumedang
                             </div>
                         </div>
                     </div>

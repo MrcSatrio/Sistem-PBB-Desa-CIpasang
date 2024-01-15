@@ -17,7 +17,9 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="<?= base_url('user/dashboard') ?>">SISTEM INFORMASI PBB</a>
+            <a class="navbar-brand ps-3" href="<?= base_url('user/dashboard') ?>">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Lambang_Kabupaten_Sumedang.png" alt="Logo Kabupaten Sumedang" style="max-height: 40px; max-width: 40px; margin-right: 10px;">PBB CIPASANG</a>
+
 
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
@@ -138,6 +140,32 @@
                 </div>
 
             </div>
+            <div class="container-fluid px-4">
+    <div class="d-flex align-items-center justify-content-between small">
+        <div class="text-muted mx-auto text-center">
+            <h2 class="font-weight-bold mb-3">SISTEM MONITORING PBB</h2>
+            <p class="lead">Desa Cipasang</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-4">
+    <div class="card">
+        <div class="card-body">
+            <div class="tittle">Informasi</div>
+            <hr>
+            <div class="text">
+                <p class="lead">
+                    Informasi pembayaran pajak bumi dan bangunan untuk tahun 2024 Desa Cipasang.
+                </p>
+                <p>
+                    Batas pembayaran pajak bumi dan bangunan hingga Desember 2024. Kami mengharapkan perhatian dari wajib pajak untuk segera melakukan pembayaran.
+                </p>
+                <p>Hatur Nuhun</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
                     <div class="container-fluid px-4">
                         <div class="row">
                             <div class="col-lg-6">
@@ -209,11 +237,9 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                            <div class="text-muted mx-auto text-center"> <!-- Menambahkan class "text-center" di sini -->
+                                &copy; 2024 Sistem Monitoring Pembayaran Pajak Bumi dan Bangunan<br>
+                                Desa Cipasang Kecamatan Cibugel Kabupaten Sumedang
                             </div>
                         </div>
                     </div>
